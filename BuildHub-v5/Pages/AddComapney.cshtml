@@ -1,0 +1,53 @@
+﻿@page
+@model BuildHub_v5.Pages.AddComapneyModel
+@{
+    ViewData["Title"] = "Add Company";
+}
+
+
+<form method="post" class="mt-4">
+
+    <input type="hidden" name="Id" />
+
+
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" name="Name" />
+    </div>
+
+
+    <div class="mb-3">
+        <label class="form-label">Type</label>
+        <select class="form-control" name="Type">
+            <option value="">-- Select Type --</option>
+
+            @foreach (var option in new[] { "broker", "Consultant", "decoration" })
+            {
+                <option value="@option">@option</option>
+            }
+        </select>
+    </div>
+
+
+    <div class="mb-3">
+        <label class="form-label">Tier</label>
+        <select class="form-control" name="Tier">
+            <option value="">-- Select Tier --</option>
+
+            @foreach (var option in new[] { "excellent", "good", "standard" })
+            {
+                <option value="@option">@option</option>
+            }
+        </select>
+    </div>
+
+
+    <div class="mb-3">
+        <label class="form-label">User ID</label>
+        <input type="text" class="form-control" name="userId" />
+    </div>
+
+
+    <button type="submit" class="btn btn-success mt-2">Save</button>
+
+</form>

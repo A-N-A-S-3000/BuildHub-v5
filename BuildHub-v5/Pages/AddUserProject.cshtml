@@ -1,0 +1,47 @@
+﻿@page
+@model BuildHub_v5.Pages.AddUserProjectModel
+@{
+    ViewData["Title"] = "Add User Project";
+}
+
+
+<h2>Add New Project</h2>
+
+@if (ViewData["Message"] != null)
+{
+    <div class="text-danger">@ViewData["Message"]</div>
+}
+
+<form method="post">
+    <div class="mb-3">
+        <label>Location</label>
+        <input class="form-control" name="Location" />
+    </div>
+
+    <div class="mb-3">
+        <label>Status</label>
+        <select class="form-select" name="Status">
+            <option value="new">New</option>
+            <option value="in progress">In Progress</option>
+            <option value="completed">Completed</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Floors</label>
+        <input class="form-control" type="number" name="Floors" />
+    </div>
+
+    <div class="mb-3">
+        <label>Kroki Number</label>
+        <input class="form-control" name="KrokiNumber" />
+    </div>
+
+    <div class="mb-3">
+        <label>User Id</label>
+        <input class="form-control" type="number" name="UserId" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+    <a href="/UserProjects" class="btn btn-secondary">Cancel</a>
+</form>

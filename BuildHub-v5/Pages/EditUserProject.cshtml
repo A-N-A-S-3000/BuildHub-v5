@@ -1,0 +1,45 @@
+﻿@page
+@model BuildHub_v5.Pages.EditUserProjectModel
+@{
+    ViewData["Title"] = "Edit Project";
+}
+
+
+<h2>Edit Project</h2>
+
+<form method="post">
+
+    <input type="hidden" name="Id" value="@ViewData["Id"]" />
+
+    <div class="mb-3">
+        <label>Location</label>
+        <input type="text" class="form-control" name="Location" value="@ViewData["Location"]" />
+    </div>
+
+    <div class="mb-3">
+        <label>Status</label>
+        <select name="Status" class="form-select">
+            <option value="new" selected="@(ViewData["Status"]?.ToString() == "new")">New</option>
+            <option value="in progress" selected="@(ViewData["Status"]?.ToString() == "in progress")">In Progress</option>
+            <option value="completed" selected="@(ViewData["Status"]?.ToString() == "completed")">Completed</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Floors</label>
+        <input type="number" class="form-control" name="Floors" value="@ViewData["Floors"]" />
+    </div>
+
+    <div class="mb-3">
+        <label>Kroki Number</label>
+        <input type="text" class="form-control" name="KrokiNumber" value="@ViewData["KrokiNumber"]" />
+    </div>
+
+    <div class="mb-3">
+        <label>User ID</label>
+        <input type="number" class="form-control" name="UserId" value="@ViewData["UserId"]" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+
+</form>

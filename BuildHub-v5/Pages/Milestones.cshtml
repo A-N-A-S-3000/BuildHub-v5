@@ -1,0 +1,71 @@
+﻿@page
+@model BuildHub_v5.Pages.MilestonesModel
+
+@{
+    ViewData["Title"] = "Milestones";
+}
+
+<h1>Milestones</h1>
+
+<p>
+    <a asp-page="MilestonesCreate">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Milestones[0].Project_Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Milestones[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Milestones[0].Due_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Milestones[0].Amount_Omr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Milestones[0].Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Milestones[0].Order_Index)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Milestones[0].Created_At)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Milestones) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Project_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Due_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount_Omr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order_Index)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Created_At)
+            </td>
+            <td>
+                <a asp-page="./MilestonesEdit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./MilestonesDelete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
