@@ -1,0 +1,88 @@
+﻿@page
+@model BuildHub_v5.Pages.LinqModel
+@{
+    ViewData["Title"] = "LINQ Examples";
+}
+
+<h1>LINQ Examples</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <h3>Where: Companies created in the last year</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Created At</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.FilteredCompanies)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.CreatedAt.ToShortDateString()</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="col-md-6">
+        <h3>OrderBy: Companies ordered by Name</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.OrderedCompanies)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Type</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <h3>GroupBy: Companies grouped by Type</h3>
+        @foreach (var group in Model.GroupedCompanies)
+        {
+            <h4>Type: @group.Key</h4>
+            <ul>
+                @foreach (var item in group)
+                {
+                    <li>@item.Name</li>
+                }
+            </ul>
+        }
+    </div>
+
+    <div class="col-md-6">
+        <h3>Multi-Table: Companies with User Email</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Company Name</th>
+                    <th>User Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.UserCompanies)
+                {
+                    <tr>
+                        <td>@item.CompanyName</td>
+                        <td>@item.UserName</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
