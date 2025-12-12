@@ -7,12 +7,44 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BuildHub_v5.styles.css" asp-append-version="true" />
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+        }
+        .card {
+            border: none;
+            box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.075);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .btn-primary {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+        }
+        .btn-primary:hover {
+            background-color: #0b5ed7;
+            border-color: #0a58ca;
+        }
+        footer {
+            background-color: #fff;
+            padding: 1rem 0;
+            margin-top: auto;
+        }
+        main {
+            min-height: calc(100vh - 160px);
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">BuildHub_v5</a>
+                <a class="navbar-brand fw-bold text-primary" asp-area="" asp-page="/Index">BuildHub_v5</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -23,26 +55,20 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/UserProjects">Projects</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/UserProjects">User Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/ProjectOwners">Project Owners</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/ProjectOwners">Owners</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Companies">Companies</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Milestones">Milestones</a>
                         </li>
-
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Linq">linq</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Linq">Reports</a>
                         </li>
-
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
@@ -55,9 +81,9 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted text-center ">
         <div class="container">
-            &copy; 2025 - BuildHub_v5 - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2025 - BuildHub_v5
         </div>
     </footer>
 

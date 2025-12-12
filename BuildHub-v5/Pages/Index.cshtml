@@ -4,7 +4,37 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center py-5">
+    <h1 class="display-4 fw-bold text-primary mb-4">Welcome to BuildHub_v5</h1>
+    <p class="lead text-secondary mb-5">Manage your construction projects, milestones, and companies efficiently.</p>
+    
+    <div class="row justify-content-center g-4">
+        <div class="col-md-4">
+            <div class="card h-100 text-center p-4">
+                <div class="card-body">
+                    <h3 class="card-title">Projects</h3>
+                    <p class="card-text">Track and manage all your construction projects in one place.</p>
+                    <a href="/UserProjects" class="btn btn-outline-primary">View Projects</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 text-center p-4">
+                <div class="card-body">
+                    <h3 class="card-title">Companies</h3>
+                    <p class="card-text">Connect with construction companies and service providers.</p>
+                    <a href="/Companies" class="btn btn-outline-primary">View Companies</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 text-center p-4">
+                <div class="card-body">
+                    <h3 class="card-title">Milestones</h3>
+                    <p class="card-text">Keep track of project progress with detailed milestones.</p>
+                    <a href="/Milestones" class="btn btn-outline-primary">View Milestones</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
