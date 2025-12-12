@@ -1,4 +1,5 @@
-﻿using BuildHubV2.Models;
+﻿using BuildHub_v5.Modles;
+using BuildHubV2.Models;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -13,5 +14,7 @@ namespace BuildHubV2.Data
         public DbSet<User> Users { get; set; }
         public DbSet<Company> Companies { get; set; }
         public DbSet<BuildHubV2.Models.Milestones> Milestones { get; set; } = default!;
+
+        public DbSet<ContactUs> ContactUs { get; set; }
     }
 }
